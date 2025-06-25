@@ -1,5 +1,4 @@
 import React from 'react';
-import './task.css';
 
 const Task = ({ taskObj, onComplete }) => {
   return (
@@ -11,7 +10,10 @@ const Task = ({ taskObj, onComplete }) => {
       <p className="pt-2 pb-3 px-0 text-sm text-[#444]">{taskObj.description}</p>
       <div>
         {taskObj.people.map((p) => (
-          <span className="pill" key={p}>
+          <span
+            className="pill inline-block px-3 py-1.5 text-sm border-2 border-solid border-[#ccc] mr-1 mb-1.5 rounded-[30px]"
+            key={p}
+          >
             {p}
           </span>
         ))}
