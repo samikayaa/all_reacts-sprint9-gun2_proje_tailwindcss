@@ -2,7 +2,7 @@ import React from 'react';
 
 const Task = ({ taskObj, onComplete }) => {
   return (
-    <div className="task rounded-md bg-white leading-normal mt-4 shadow-[0_4px_5px_0_rgba(0,0,0,0.1)]">
+    <div className="task rounded-md bg-white leading-normal mt-4 shadow-[0_4px_5px_0_rgb(0 0 0 / 10%)]">
       <h3 className="text-lg text-[#c8781a]">{taskObj.title}</h3>
       <div className="deadline text-xs pt-1">
         son teslim: <span className="px-2 py-1 rounded-sm inline-block">{taskObj.deadline}</span>
@@ -20,7 +20,7 @@ const Task = ({ taskObj, onComplete }) => {
       </div>
       {onComplete && (
         <button
-          className="block px-3 py-2 ml-auto bg-[#fecc91] shadow-md rounded-sm border-0 cursor-pointer"
+          className="block px-3 py-2 ml-auto bg-[#fecc91] shadow-[0_4px_5px_0_rgb(0 0 0 / 5%)] rounded-sm border-0 cursor-pointer"
           onClick={() => onComplete(taskObj.id)}>Tamamlandı</button>
       )}
     </div>
