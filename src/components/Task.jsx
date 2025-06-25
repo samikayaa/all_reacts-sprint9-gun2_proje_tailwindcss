@@ -1,5 +1,5 @@
 import React from 'react';
-import { formatDistanceToNow } from "date-fns";
+import { differenceInDays, formatDistanceToNow } from "date-fns";
 import { tr } from "date-fns/locale";
 
 
@@ -9,11 +9,13 @@ const Task = ({ taskObj, onComplete }) => {
 
   const deadlineText = formatDistanceToNow(deadline, { locale: tr, addSuffix: true }); //x gün sonra kısmını addSuffix yapıyor!!!
 
+  const deadlineClass = differenceInDays(deadline, new Date()) < 3 ? "bg-urgent" : "bg-normal";
+
   return (
     <div className="task rounded-md bg-white leading-normal mt-4 shadow-[0_4px_5px_0_rgb(0 0 0 / 10%)]">
       <h3 className="text-lg text-[#c8781a]">{taskObj.title}</h3>
       <div className="deadline text-xs pt-1">
-        son teslim: <span className="px-2 py-1 rounded-sm inline-block">{deadlineText}</span>
+        son teslim: <span className={`${deadlineClass} px-2 py-1 rounded-sm inline-block`}>{deadlineText}</span>
       </div>
       <p className="pt-2 pb-3 px-0 text-sm text-[#444]">{taskObj.description}</p>
       <div>
