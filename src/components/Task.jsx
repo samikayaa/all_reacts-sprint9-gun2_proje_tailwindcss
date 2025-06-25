@@ -3,7 +3,7 @@ import './task.css';
 
 const Task = ({ taskObj, onComplete }) => {
   return (
-    <div className="task">
+    <div className="task rounded-md">
       <h3>{taskObj.title}</h3>
       <div className="deadline">
         son teslim: <span>{taskObj.deadline}</span>
