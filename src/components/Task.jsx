@@ -1,12 +1,13 @@
 import React from 'react';
 import { formatDistanceToNow } from "date-fns";
+import { tr } from "date-fns/locale";
 
 
 const Task = ({ taskObj, onComplete }) => {
 
   const deadline = new Date(taskObj.deadline);
 
-  const deadlineText = formatDistanceToNow(deadline);
+  const deadlineText = formatDistanceToNow(deadline, { locale: tr, addSuffix: true }); //x gün sonra kısmını addSuffix yapıyor!!!
 
   return (
     <div className="task rounded-md bg-white leading-normal mt-4 shadow-[0_4px_5px_0_rgb(0 0 0 / 10%)]">
